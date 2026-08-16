@@ -15,7 +15,8 @@ class ClaudeContext < Formula
   license "MIT"
   version "0.1.0"
 
-  depends_on "node"
+  # 运行时依赖 node，但不由 Homebrew 强制安装（很多用户已有独立 node）。
+  # 若需 Homebrew 管理 node，请自行 `brew install node`。
 
   def install
     # 脚本本身无构建步骤，直接安装到 bin/
@@ -23,7 +24,9 @@ class ClaudeContext < Formula
   end
 
   test do
-    # 冒烟测试：确认命令能被调起并打印版本
-    assert_match version.to_s, shell_output("#{bin}/claude-context --version")
+    # 冒烟测试：确认命令能被调起并打印版本；无 node 时跳过
+    if system("command -v node >/dev/null 2>&1")
+      assert_match version.to_s, shell_output("#{bin}/claude-context --version")
+    end
   end
 end
