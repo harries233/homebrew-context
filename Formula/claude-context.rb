@@ -10,10 +10,10 @@
 class ClaudeContext < Formula
   desc "CLI to monitor Claude Code context usage from the terminal"
   homepage "https://github.com/harries233/claude-context-cli"
-  url "https://github.com/harries233/claude-context-cli/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "03bfa14e0e5bc57beeb7fe2328a4d6643d7ae4ba2ee413200f96228cbd01dae0"
+  url "https://github.com/harries233/claude-context-cli/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "3b8e2b0c0b73b382045c1f73663bcd3b10dd7fd37337fc7dd14726d94f032d78"
   license "MIT"
-  version "0.1.0"
+  version "0.1.1"
 
   # 运行时依赖 node，但不由 Homebrew 强制安装（很多用户已有独立 node）。
   # 若需 Homebrew 管理 node，请自行 `brew install node`。
